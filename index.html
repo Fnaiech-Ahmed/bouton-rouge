@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Le Tabouret qui parle</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        .message-box {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            max-width: 500px;
+            margin: auto;
+            font-size: 1.2em;
+        }
+        .footer {
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #888;
+        }
+        .refresh-btn {
+            background-color: #e63946;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        .refresh-btn:hover {
+            background-color: #d62828;
+        }
+    </style>
+    <script>
+        const messages = [
+            "Tu es plus capable que tu ne le crois. Repose-toi une seconde ici.",
+            "Merci d’être passé. Tu fais de ton mieux, et ça se voit.",
+            "Je suis juste un tabouret… mais même moi je vois que tu assures.",
+            "Pause méritée. Recharge ton courage ici.",
+            "Les grandes idées commencent souvent sur un petit siège.",
+            "Tu n’as pas besoin d’aller vite. Juste d’avancer.",
+            "Ce n’est pas le bug, c’est la preuve que tu construis quelque chose.",
+            "Chaque jour, un petit pas. Et aujourd’hui, c’était un bon pas.",
+            "Tu fais une pause ? Bravo. Même les héros respirent.",
+            "Tu n’as pas besoin d’être parfait. Juste présent.",
+            "Ton cerveau carbure. Ton cœur tient bon. Continue.",
+            "Petit conseil : pense à toi comme à ton meilleur ami.",
+            "Ce tabouret croit en toi. Et toi, tu peux aussi.",
+            "« Je crains que nous n'ayons réveillé un géant endormi. » — Amiral Isoroku Yamamoto"
+        ];
+
+        function displayRandomMessage() {
+            const box = document.getElementById('message');
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            box.textContent = messages[randomIndex];
+        }
+
+        window.onload = displayRandomMessage;
+    </script>
+</head>
+<body>
+    <div class="message-box" id="message">
+        Chargement du message...
+    </div>
+    <button class="refresh-btn" onclick="displayRandomMessage()">Encore une pensée 👀</button>
+    <div class="footer">
+        Le tabouret vous parle... à chaque scan.
+    </div>
+</body>
+</html>
